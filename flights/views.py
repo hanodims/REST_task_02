@@ -6,7 +6,7 @@ from datetime import datetime
 
 from .models import Flight, Booking
 from .serializers import ( 
-	FlightSerializer, BookingSerializer, BookingDetailSerializer,BookingCreateSerializer
+	FlightSerializer, BookingSerializer, BookingDetailSerializer,BookingUpdateSerializer
 )
 
 
@@ -29,7 +29,7 @@ class BookingsDetail(RetrieveAPIView):
 
 class BookingUpdate(RetrieveUpdateAPIView):
     queryset = Booking.objects.all()
-    serializer_class = BookingCreateSerializer
+    serializer_class = BookingUpdateSerializer
     lookup_field = 'id'
     lookup_url_kwarg = 'booking_id'
 
